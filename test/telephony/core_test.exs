@@ -26,7 +26,8 @@ defmodule Telephony.CoreTest do
 
     payload = %{
       name: "Rushikesh",
-      phone_no: "123"
+      phone_no: "123",
+      subscriber_type: :prepaid
     }
 
     result = Core.create_subscriber(subscribers, payload)
