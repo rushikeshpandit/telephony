@@ -1,5 +1,5 @@
-defmodule Subscriber.SubscriberTest do
-  alias Subscriber.Subscriber
+defmodule Telephony.Core.SubscriberTest do
+  alias Telephony.Core.Subscriber
   use ExUnit.Case
 
   test "create subscriber" do
