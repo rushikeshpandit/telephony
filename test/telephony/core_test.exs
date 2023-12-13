@@ -60,4 +60,21 @@ defmodule Telephony.CoreTest do
 
     assert expect == result
   end
+
+  test "show error when subscriber already exists", %{
+    subscribers: subscribers,
+    payload: payload
+  } do
+    result = Core.create_subscriber(subscribers, payload)
+    assert {:error, "subscriber already exists"} == result
+  end
+
+  test "show error when subscriber type does not exists", %{
+    payload: payload
+  } do
+    payload = Map.put(payload, :subscriber_type, :partpay)
+
+    result = Core.create_subscriber([], payload)
+    assert {:error, "invalid subscriber type"} == result
+  end
 end
