@@ -12,7 +12,13 @@ defmodule Telephony.CoreTest do
       }
     ]
 
-    %{subscribers: subscribers}
+    payload = %{
+      name: "Rushikesh",
+      phone_no: "123",
+      subscriber_type: :prepaid
+    }
+
+    %{subscribers: subscribers, payload: payload}
   end
 
   test "create new subscriber" do
